@@ -1,0 +1,39 @@
+{
+    "name": "deloitte-angular-snippets",
+    "displayName": "Deloitte Angular Snippets",
+    "description": "Angular snippets for rapid development at deloitte.",
+    "version": "0.0.1",
+    "publisher": "Deloite",
+    "license": "MIT",
+    "author": "codeLabs",
+    "galleryBanner": {
+        "color": "#eff1f3",
+        "theme": "light"
+    },
+    "keywords": [
+        "Angular",
+        "crud",
+        "deloitte",
+        "snippets",
+        "Reactive",
+        "TypeScript"
+    ],
+    "engines": {
+        "vscode": "^1.36.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "typescript",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/seanonline/deloitteangularsnippets.git"
+    }
+}
