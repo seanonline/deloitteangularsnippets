@@ -19,10 +19,14 @@ Multiple snippets come in multiple variations.
 
 ### Angular Typescript Snippets
 
-| Snippet | Description |
-| ------- | ----------|
-| deloitte-angular-service-CRUD-setup | To Add CRUD Angular Service Generation Template |
-|  deloitte-angular-service-Subscribe | To Add Service Subscription Template |
+| Snippet                             | Description 
+| ----------------------------------- | ------------------------------------------------
+| deloitte-angular-service-CRUD-setup | To Add CRUD Angular Service Generation Template 
+| deloitte-angular-service-Subscribe  | To Add Service Subscription Template 
+| del-angular-component               | Creates standard Angular2+ component template
+| del-angular-module                  | Creates standard Angular2+ module template
+| del-http-interceptor                | Creates HTTP interceptor
+| del-http-interceptor-logging        | Creates Logging interceptor
 
 
 # Important
