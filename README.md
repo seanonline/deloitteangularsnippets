@@ -10,6 +10,7 @@ angular rapid development.
 | Prefix | Description |
 | ------- | ----------|
 | deloitte-angular | Angular Snippets |
+| deloitte-png     | PrimenNg Snippets Coming soon
 
 # Usage
 
