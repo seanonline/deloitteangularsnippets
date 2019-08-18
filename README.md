@@ -27,6 +27,8 @@ Multiple snippets come in multiple variations.
 | del-angular-module                  | Creates standard Angular2+ module template
 | del-http-interceptor                | Creates HTTP interceptor
 | del-http-interceptor-logging        | Creates Logging interceptor
+| del-http-error-interceptor          | Creates HTTP Error Interceptor
+| del-http-jwt-interceptor            | Creates JWT Interceptor
 
 
 # Important

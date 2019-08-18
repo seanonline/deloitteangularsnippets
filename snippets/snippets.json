@@ -244,5 +244,71 @@
       "\t}",
       "}"
     ]
-  }
+  },
+  "Angular Error Interceptor":{
+    "prefix":"del-http-error-intercceptor",
+    "description":"Angular Http Error Interceptor",
+    "body":[
+      "import { Injectable } from '@angular/core';",
+      "import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';",
+      "import { Observable, throwError } from 'rxjs';",
+      "import { catchError } from 'rxjs/operators';",
+      "import { AuthenticationService } from '../_services';",
+      "",
+      "@Injectable()",
+      "export class ErrorInterceptor implements HttpInterceptor {",
+      "\tconstructor(",
+      "// private authenticationService: AuthenticationService",
+      ") { }",
+      "",
+      "\tintercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {",
+      "\t\t\t\t\t\treturn next.handle(request).pipe(catchError(err => {",
+      " \t\t\t\t\t\t\t\tif ([401, 403].indexOf(err.status) !== -1) {",
+      " \t\t\t\t\t\t\t\t\t\t\t// auto logout if 401 Unauthorized or 403 Forbidden response returned from api",
+      " \t\t\t\t\t\t\t\t\t\t\t\t\tthis.authenticationService.logout();",
+      " \t\t\t\t\t\t\t\t\t\t\t\t\t\tlocation.reload(true);",
+      "\t\t\t\t\t\t\t\t\t\t\t\t\t}",
+      "",
+      "\t\t\t\t\t\t\t\t\tconst error = err.error.message || err.statusText;",
+      "\t\t\t\t\t\t\t\t\treturn throwError(error);",
+      "\t\t\t\t   }))",
+      "\t\t\t   }",
+      "\t}  "
+    ] 
+  },
+  "Angular JWT interceptor":{
+  "prefix":"del-http-jwt-interceptor",
+  "description": "Angular JWT interceptor",
+  "body":[
+    "import { Injectable } from '@angular/core';",
+    "import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';",
+    "import { Observable } from 'rxjs';",
+    "import { environment } from '../../environment';",
+    "import { AuthenticationService } from '../_services';",
+    "",
+    "@Injectable()",
+    "export class JwtInterceptor implements HttpInterceptor {",
+    "\t\t\tconstructor(",
+    "\\private authenticationService: AuthenticationService",
+    "){ }",
+    "",
+    "\t\t\tintercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {",
+    "        // add auth header with jwt if user is logged in and request is to api url",
+    "\t\t\t\tconst currentUser = this.authenticationService.currentUserValue;",
+    "\t\t\t\tconst isLoggedIn = currentUser && currentUser.token;",
+    "\t\t\t\tconst isApiUrl = request.url.startsWith(environment.apiUrl);",
+    "\t\t\t\tif (isLoggedIn && isApiUrl) {",
+    "\t\t\t\t\t\trequest = request.clone({",
+    "\t\t\t\t\t\t\t\tsetHeaders: {",
+    "\t\t\t\t\t\t\t\t\t\tAuthorization: `Bearer ${currentUser.token}`",
+    "\t\t\t\t\t\t\t\t}",
+    "\t\t\t\t\t\t\t});",
+    "\t\t\t\t\t\t}",
+    "",
+    "\t\t\t\t\treturn next.handle(request);",
+    "\t\t\t\t}",
+    "}
+  ]
+
+}
 }
