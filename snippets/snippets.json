@@ -307,7 +307,7 @@
     "",
     "\t\t\t\t\treturn next.handle(request);",
     "\t\t\t\t}",
-    "}
+    "}"
   ]
 
 }
