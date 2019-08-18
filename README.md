@@ -14,8 +14,7 @@ angular rapid development.
 
 # Usage
 
-All Angular snippets starts with "deloitte-angular-".
-Multiple snippets come in multiple variations.
+All Angular snippets starts with "deloitte-angular-". Multiple snippets come in multiple variations.
 
 
 ### Angular Typescript Snippets
