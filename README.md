@@ -1,4 +1,4 @@
-# Deloitte Angular Snippets for VS Code
+# Deloitte Angular 7/8 Snippets for VS Code
 
 [![made-for](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/)
 
@@ -10,6 +10,7 @@ angular rapid development.
 | Prefix | Description |
 | ------- | ----------|
 | deloitte-angular | Angular Snippets |
+| deloitte-png     | PrimenNg Snippets Coming soon
 
 # Usage
 
